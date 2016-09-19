@@ -1,7 +1,8 @@
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
+<!-- Latest compiled and minified CSS -->
 <div class="player">
     <ul>
         <div class="sermon">
@@ -25,7 +26,32 @@
                 </canvas>
                 <p id="timer">0:00</p>
                 <div class="controls">
-                    <span class="expend"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
+
+                        <button type="button" id="button_fbw" class="btn" onclick='buttonRewindPress()'>
+                            <i class="fa fa-fast-backward"></i>
+                        </button>
+
+                        <button type="button" id="button_bw" class="btn" onclick='buttonBackPress()'>
+                            <i class="fa fa-backward"></i>
+                        </button>
+
+                        <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
+                            <i class="fa fa-play"></i>
+                        </button>
+
+                        <button type="button" id="button_stop" class="btn" onclick='buttonStopPress()'>
+                            <i class="fa fa-stop"></i>
+                        </button>
+
+                        <button type="button" id="button_fw" class="btn" onclick='buttonForwardPress()'>
+                            <i class="fa fa-forward"></i>
+                        </button>
+
+                        <button type="button" id="button_ffw" class="btn" onclick='buttonFastforwardPress()'>
+                            <i class="fa fa-fast-forward"></i>
+                        </button>
+
+                    <!--<span class="expend"><svg class="step-backward" viewBox="0 0 25 25" xml:space="preserve">
                   <g><polygon points="4.9,4.3 9,4.3 9,11.6 21.4,4.3 21.4,20.7 9,13.4 9,20.7 4.9,20.7"></polygon></g>
                </svg></span>
 
@@ -47,7 +73,7 @@
                     <!--<button id="play" onclick="playAudio();" disabled>
                         Play
                     </button>-->
-                    <button id="rewind" onclick="rewindAudio();" disabled>
+                  <!--  <button id="rewind" onclick="rewindAudio();" disabled>
                         Rewind
                     </button>
                     <button id="forward" onclick="forwardAudio();" disabled>
@@ -55,14 +81,18 @@
                     </button>
                     <button id="restart" onclick="restartAudio();" disabled>
                         Restart
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </li>
     </ul>
 </div>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/41473b8b36.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
 <script src="js/main2.js"></script>
+<!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript">
     //Check for support and enable buttons
     if (window.HTMLAudioElement) {

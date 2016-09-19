@@ -1,11 +1,55 @@
+//Buttons
+var state = 'stop';
+
+function buttonBackPress() {
+    console.log("button back invoked.");
+}
+
+function buttonForwardPress() {
+    console.log("button forward invoked.");
+}
+
+function buttonRewindPress() {
+    console.log("button rewind invoked.");
+}
+
+function buttonFastforwardPress() {
+    console.log("button fast forward invoked.");
+}
+
+function buttonPlayPress() {
+    if(state=='stop'){
+        state='play';
+        var button = d3.select("#button_play").classed('btn-success', true);
+        button.select("i").attr('class', "fa fa-pause");
+    }
+    else if(state=='play' || state=='resume'){
+        state = 'pause';
+        d3.select("#button_play i").attr('class', "fa fa-play");
+    }
+    else if(state=='pause'){
+        state = 'resume';
+        d3.select("#button_play i").attr('class', "fa fa-pause");
+        var playButton = document.getElementById("play");
+        var pauseButton = document.getElementById("pause");
+        pauseButton.style.visibility = "hidden";
+//display and update progress bar
+        function progressBar() {
+            var oAudio = document.getElementById('myaudio');
+    }
+    console.log("button play pressed, play was "+state);
+}
+
+function buttonStopPress(){
+    state = 'stop';
+    var button = d3.select("#button_play").classed('btn-success', false);
+    button.select("i").attr('class', "fa fa-play");
+    console.log("button stop invoked.");
+}
+
+
 //Global variable to track current file name
 var currentFile = "";
-var playButton = document.getElementById("play");
-var pauseButton = document.getElementById("pause");
-pauseButton.style.visibility = "hidden";
-//display and update progress bar
-function progressBar() {
-    var oAudio = document.getElementById('myaudio');
     //get current time in seconds
     var elapsedTime = Math.round(oAudio.currentTime);
     //update the progress bar
@@ -53,52 +97,6 @@ function playAudio() {
         if (window.console && console.error("Error:" + e));
     }
 }
-
-/*function playAudio() {
- try {
- //return objects we need to work with
- var oAudio = document.getElementById('myaudio');
- var audioURL = document.getElementById('audiofile');
- var playButton = document.getElementById("play");
- var pauseButton = document.getElementById("pause");
-
-
- //Skip loading if current file hasn't changed.
- if (audioURL.value !== currentFile) {
- oAudio.src = audioURL.value;
- currentFile = audioURL.value;
- }
- //Tests the paused attribute and set state.
- if (oAudio.paused) {
- oAudio.play();
- playButton.style.visibility = "hidden";
- pauseButton.style.visibility = "visible";
- }
- else if (oAudio.play) {
- oAudio.pause();
- playButton.style.visibility = "visible";
- pauseButton.style.visibility = "hidden";
- }
- }
- catch (e) {
- // Fail silently but show in F12 developer tools console
- if (window.console && console.error("Error:" + e));
- }
- }
- */
-
-/*playButton = function() {
-
-    playButton.style.visibility = "hidden";
-    pause.style.visibility = "visible";
-}
-
-pauseButton = function() {
-
-    playButton.style.visibility = "visible";
-    pause.style.visibility = "hidden";
-}*/
-
 //Rewinds the audio file by 30 seconds.
 function rewindAudio() {
     try {
