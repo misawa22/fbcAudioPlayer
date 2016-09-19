@@ -1,4 +1,4 @@
-var music = document.getElementById("music");
+var music = document.getElementById("music")
 var playButton = document.getElementById("play");
 var pauseButton = document.getElementById("pause");
 var playhead = document.getElementById("elapsed");
