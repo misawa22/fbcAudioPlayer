@@ -39,3 +39,7 @@ Thumbs.db
 # phpstorm #
 ######################
 *.idea/
+
+# Files #
+######################
+connect.php
