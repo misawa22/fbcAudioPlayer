@@ -17,7 +17,7 @@ include('../../public_ftp/connect.php'); // Connection stored in $dbc variable
     $category = mysqli_real_escape_string($dbc, $_POST['category']);
 
 // attempt insert query execution
-    $sql = "INSERT INTO player (url, title, name_speaker, sermon_date, sermon_time, tags) VALUES ('$url', '$title', '$name_speaker', '$sermon_date', '$sermon_time', '$tags', '$category')";
+    $sql = "INSERT INTO player (url, title, name_speaker, sermon_date, sermon_time, tags, category) VALUES ('$url', '$title', '$name_speaker', '$sermon_date', '$sermon_time', '$tags', '$category')";
     if(mysqli_query($dbc, $sql)){
         echo "Records added successfully.";
     } else{
@@ -36,6 +36,7 @@ include('../../public_ftp/connect.php'); // Connection stored in $dbc variable
 <head>
     <meta charset="UTF-8">
     <title>FBC Audio Player Add Record Form</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <h1>FBC Audio Player Add Record Form</h1>
@@ -70,5 +71,8 @@ include('../../public_ftp/connect.php'); // Connection stored in $dbc variable
     </p>
     <input type="submit" value="Submit">
 </form>
+<br>
+<div id="uploads"></div>
+<div class="dropzone" id="dropzone">Drop files here to upload</div>
 </body>
 </html>

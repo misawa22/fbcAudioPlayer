@@ -1,3 +1,6 @@
+body {
+    font-family: "Arial", sans-serif;
+}
 *,
 *::before,
 *::after {
@@ -578,4 +581,17 @@
 }
 .audio-player .player-controls .h-show {
     display: block;
+}
+
+.dropzone {
+    width: 300px;
+    height: 300px;
+    border: 2px dashed #ccc;
+    color: #ccc;
+    line-height: 300px;
+    text-align: center;
+}
+.dropzone.dragover {
+    border-color: #000;
+    color: #000;
 }
